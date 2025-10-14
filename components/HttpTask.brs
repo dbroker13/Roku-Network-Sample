@@ -14,10 +14,8 @@ function doRequest() as void
     response = xfer.GetToString()
 
     if response <> invalid and response <> ""
-        print "HTTP SUCCESS: "; left(response, 200); "..." ' print only first 200 chars
         m.top.result = { success: true, body: response }
     else
-        print "HTTP FAILED — empty response"
         m.top.result = { success: false, body: "" }
     end if
 end function

@@ -1,25 +1,23 @@
 sub init()
     m.label = m.top.findNode("statusLabel")
-    m.label.text = "Preparing network test..."
-    m.label.color = &hFFFFFFFF
 
+    ' Create and start the HTTP Task
     m.httpTask = CreateObject("roSGNode", "HttpTask")
     m.httpTask.observeField("result", "onHttpResult")
-    m.top.appendChild(m.httpTask)
-
-    print "Starting HTTP task..."
     m.httpTask.control = "RUN"
+
+    m.label.text = "Requesting..."
 end sub
 
 sub onHttpResult()
     result = m.httpTask.result
     if result.success
-        print "HTTP SUCCESS: "; left(result.body, 200)
         m.label.text = "SUCCESS!"
-        m.label.color = &hFF00FF00
+        m.label.color = "0x00FF00FF"  ' green
+        print "HTTP SUCCESS: "; left(result.body, 200); "..."
     else
-        print "HTTP FAIL: code="; result.code
-        m.label.text = "FAIL: " + str(result.code)
-        m.label.color = &hFFFF0000
+        m.label.text = "FAILED!"
+        m.label.color = "0xFF0000FF"  ' red
+        print "HTTP FAILED"
     end if
 end sub
