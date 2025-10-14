@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+    <children>
+        <Label
+            id="statusLabel"
+            text="Initializing..."
+            horizAlign="center"
+            vertAlign="center"
+            width="1280"
+            height="720"
+            translation="[0,0]"
+            font="font:MediumSystemFont"
+            color="0xFFFFFFFF" />
+    </children>
+    <script type="text/brightscript" uri="MainScene.brs" />
+</component>
