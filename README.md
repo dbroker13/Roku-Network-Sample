@@ -2,6 +2,7 @@
 
 ## To build
 rm Test.zip
+
 zip -r Test1.zip . -x ".git/*" ".gitignore"
 
 ## For Cert Injection
