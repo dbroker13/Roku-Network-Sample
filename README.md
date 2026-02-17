@@ -1,5 +1,8 @@
-# Roku-Netwrok-Sample
-# Roku-Netwrok-Sample
+# Roku-Network-Sample
 
-rm test.zip
-zip -r Test.zip . -x ".git/*"
+## To build
+rm Test.zip
+zip -r Test1.zip . -x ".git/*" ".gitignore"
+
+## For Cert Injection
+Change the cert in components/HttpsTask.brs
