@@ -3,14 +3,19 @@
     <children>
         <Label
             id="statusLabel"
-            text="Initializing..."
+            text="Press the button to make a request"
             horizAlign="center"
             vertAlign="center"
             width="1280"
             height="720"
-            translation="[0,0]"
+            translation="[0,-50]"
             font="font:MediumSystemFont"
             color="0xFFFFFFFF" />
+
+        <CustomButton
+            id="requestButton"
+            text="Make Request"
+            translation="[540, 385]" />
     </children>
     <script type="text/brightscript" uri="MainScene.brs" />
 </component>

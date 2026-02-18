@@ -1,2 +1,6 @@
 # Ignore Certs
 certs/
+.geminiignore
+gemini.md
+notes.txt
+.DS_Store

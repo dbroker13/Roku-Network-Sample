@@ -1,12 +1,23 @@
 sub init()
     m.label = m.top.findNode("statusLabel")
+    m.button = m.top.findNode("requestButton")
+    m.button.text = "Make Request"
+    m.button.setFocus(true)
+    m.button.observeField("buttonSelected", "onButtonSelected")
+end sub
 
+sub onButtonSelected()
+    makeApiCall()
+end sub
+
+sub makeApiCall()
     ' Create and start the HTTP Task
     m.httpTask = CreateObject("roSGNode", "HttpTask")
     m.httpTask.observeField("result", "onHttpResult")
     m.httpTask.control = "RUN"
 
     m.label.text = "Requesting..."
+    m.label.color = "0xFFFFFFFF" ' white
 end sub
 
 sub onHttpResult()
